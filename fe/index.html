@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mi tienda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FONT OSWALD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="log/css/tienda.css"/>
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+ </head>
+<body data-barba="wrapper">
+        <div class="load-container">
+            <div class="loading-screen"></div>
+        </div>
+
+<!-- PRODUCTOS -->
+<section class="section-pr">
+       <div class="contenedor">
+            <div class="container-nav">
+                <header>
+                <div class="menu-btn">
+                        <i class="fas fa-bars fa-x3"></i>
+                </div>
+                <nav id="nav-main-id" class="nav-main">
+                    <ul class="nav-menu">
+                        <li><a href="../../index.html">INICIO</a></li>
+                        <li><a href="#">TIENDA</a></li>
+                        <li><a href="#">SOBRE NOSOTROS</a></li>
+                    </ul>
+                    <ul class="nav-menu-right">
+                        <!-- <li>
+                            <a href="#buscar" class="boton">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="buscar" class="buscar" placeholder="">
+                            </a>
+                        </li> -->
+                        <div class="nav-shopping">
+                            <li><button id="boton-carrito" class="carrito-btn" onclick=""><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button></li>
+                        </div>
+                    </ul>
+
+                    
+                </nav>
+                </header>
+            </div>
+       </div>
+        <div class="modal-contenedor">
+            <div class="modal-carrito">
+                <h3>Carrito</h3>
+                <button id="carritoCerrar" onclick="btnCerrar()"><i class="fas fa-times-circle"></i></button>
+                <div id="carrito-contenedor">
+                     <div class="productoEnCarrito">
+                        
+                    </div>
+                </div>
+                <hr>
+                <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+                <div class="buttons-carrito">
+                    <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+                    <button id="go-pay" class="boton-comprar" onclick="showOrder();">Confirmar pedido</button>
+                </div>
+                
+            </div>
+        </div>
+            
+    <main id="contenedor-productos">
+        <div class="page__content" id="page-content"></div>
+        
+        <div id="form-container" class="form-container">
+            <form class="manage-order" id="formulario">
+                <button id="cerrar-form" class="cerrar-form">❌</button>
+        
+                <div class="form-group">
+                    <label for="name">Nombre completo</label><br>
+                    <input type="text" name="name" id="name" class="form-control" value="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Telefono</label><br>
+                    <input type="text" name="tel" id="tel" class="form-control" value="" required autocomplete="on">
+                </div>
+
+                <div class="form-group" id="show-order">
+                    <label for="order"><b>Mi pedido</b></label><br>
+                </div>
+        
+                <div class="form-group" id="op-order">
+                    <label for="password">Elige donde quieres tu pedido</label>
+                    <ul class="options-delivery" id="op-entregas">
+                        <span id="delivery" >A Domicilio</span>
+                        <span id="lugar" >Consumo en el Lugar</span>
+                        <span id="retiro" >Retiro Personalmente</span>
+                    </ul>
+                </div>
+                <div class="form-group" id="form-delivery">
+
+                </div>
+
+                <div class="form-pay" id="pay-all">
+                <button id="sumbit" class="boton-pagar"><i class="fab fa-whatsapp"></i> Enviar a Whatsapp</button>
+                </div>
+                </form>
+        </div>
+    </main>
+        
+</section>
+
+
+
+   
+<!-- END PRODUCTOS -->
+
+
+    <footer class="pie-pagina">
+        <!-- <div class="element-footer">
+                <div class="box">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="visitartienda.html">Tienda</a></li>
+                        <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h2>CONTACTANOS</h2>
+                    <ul>
+                        <li><a href="https://wa.me/3772430213" target="_blank">Whatsapp</a></li>
+                        <li><a href="#" target="_blank">example@example.com</a></li>
+                    </ul>
+                </div>
+        </div> -->
+
+        <div class="footer-legal">
+            <small>&copy; 2022 <b>Julian Niveyro PL</b> - Todos los Derechos Reservados</small>
+            
+        </div>
+    </footer>
+<!-- END FOOTER -->
+    
+   
+    <script src="log/js/submit.js"></script>
+    <script src="log/js/app.js"></script>
+    <script src="log/js/modal.js"></script>
+    <script src="log/js/main.js"></script>
+    </body>
+    
+        
+        
+</html>div
